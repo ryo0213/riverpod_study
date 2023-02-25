@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // providerをグローバルに宣言
-// 外部から変更可能なStateProviderを使用
+
+// StateProvider
+// 外部から変更可能な状態をシンプルに提供する
 // 1ずつ値をぞかさせるためのカウンターProvider
 final counterProvider = StateProvider((ref) => 0);
 
+// Provider
+// (外部からは)変更できない値を公開できる基本的なProvider
 // カウンターの値を2倍にした値を提供するProvider
 final doubleCounterProvider = Provider((ref) {
   final count = ref.watch(counterProvider);
